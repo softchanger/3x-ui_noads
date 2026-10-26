@@ -27,6 +27,7 @@ Built as an enhanced fork of the original X-UI project, 3X-UI adds broader proto
 ## Differences with original 3X-UI:
 - **Removed all sponsor's ADS**
 - **Added a little instruction for build**
+- **Will modify install.sh later**
 - **All other files are not modified**
 
 Removed:
@@ -71,12 +72,12 @@ strip --strip-all dist/x-ui
 ```
 Binary file x-ui placed in the dist/ after build.
 
-Clean cache for a new build (will removed already builded binary):
+Clean cache for a new build (will removed already built binary):
 ```bash
 rm -rf "frontend/node_modules" "frontend/dist" "internal/web/dist" "dist"
 ```
 
-Install builded binary without ADS (if you already has with ADS one):
+Install built binary without ADS (if you already has with ADS one):
 ```bash
 systemctl stop x-ui.service
 rm -rf "/usr/local/x-ui/x-ui" && cp -r "dist/x-ui" "/usr/local/x-ui"
