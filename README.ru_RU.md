@@ -28,8 +28,7 @@
 - **Вырезана вся спонсорская реклама**
 - **Добавлена инструкция по сборке**
 - **Все остальное осталось без изменений**
-<details>
-<summary>Нажмите чтобы узнать подробности</summary>
+
 Удалено:
 ```
         deleted:    frontend/src/api/queries/useSponsorsQuery.ts
@@ -52,10 +51,7 @@
         modified:   internal/web/controller/index.go
 ```
 README на русском и английском. Все остальное не отличается от оригинала.
-</details>
 
-<details>
-<summary>Нажмите для инструкции по сборке</summary>
 Сборка (пока только Ubuntu):
 Вставлять команды последовательно:
 ```bash
@@ -92,7 +88,6 @@ apt remove --purge -y build-essential && apt autoremove -y
 nvm deactivate && nvm uninstall node
 rm -rf ~/go ~/.nvm ~/.npm ~/.node-gyp ~/.cache/go-build
 ```
-</details>
 
 ## Возможности
 
