@@ -30,7 +30,7 @@
 - **Все остальное осталось без изменений**
 <details>
 <summary>Нажмите чтобы узнать подробности</summary>
-- **Удалено:**
+Удалено:
 ```
         deleted:    frontend/src/api/queries/useSponsorsQuery.ts
         deleted:    frontend/src/components/sponsor/SponsorCard.css
@@ -44,20 +44,19 @@
         deleted:    internal/web/service/panel/sponsor.go
         deleted:    internal/web/service/panel/sponsor_test.go
 ```
-- **Изменено:**
+Изменено:
 ```
         modified:   frontend/src/pages/index/IndexPage.tsx
         modified:   frontend/src/pages/login/LoginPage.tsx
         modified:   frontend/src/routes/panelRoutes.tsx
         modified:   internal/web/controller/index.go
 ```
-README на русском и английском.
-- **Все остальное не тронуто**
+README на русском и английском. Все остальное не отличается от оригинала.
 </details>
 
 <details>
 <summary>Нажмите для инструкции по сборке</summary>
-- **Сборка (пока только Ubuntu):**
+Сборка (пока только Ubuntu):
 Вставлять команды последовательно:
 ```bash
 # Получение зависимостей
@@ -74,7 +73,7 @@ cd ../frontend && npm ci && npm run build && cd ..
 mkdir -p dist && CGO_ENABLED=1 ./deps/go/bin/go build -v -trimpath -o dist/x-ui .
 strip --strip-all dist/x-ui
 ```
-Бинарный файл x-ui после сборки лежит в **dist/**.
+Бинарный файл x-ui после сборки лежит в dist/.
 
 Очистить для сборки по новой (будет удален бинарь если был уже собран!):
 ```bash
