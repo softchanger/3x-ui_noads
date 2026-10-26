@@ -77,13 +77,13 @@ Clean cache for a new build (will removed already built binary):
 rm -rf "frontend/node_modules" "frontend/dist" "internal/web/dist" "dist"
 ```
 
-Install built binary without ADS (if you already has with ADS one):
+Install built binary without ADS (if you already have with ADS one):
 ```bash
 systemctl stop x-ui.service
 rm -rf "/usr/local/x-ui/x-ui" && cp -r "dist/x-ui" "/usr/local/x-ui"
 systemctl start x-ui.service
 ```
-Remove all dependencies after build (if you are not plaining to build after):
+Remove all dependencies after building (if you are not plaining to build after):
 ```bash
 apt remove --purge -y build-essential && apt autoremove -y
 nvm deactivate && nvm uninstall node
