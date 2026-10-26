@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/mhsanaei/3x-ui/v3/internal/logger"
-	"github.com/mhsanaei/3x-ui/v3/internal/web/entity"
+//	"github.com/mhsanaei/3x-ui/v3/internal/web/entity" // Go is wrinting that it isn't used after remove sponsors
 	"github.com/mhsanaei/3x-ui/v3/internal/web/middleware"
 	"github.com/mhsanaei/3x-ui/v3/internal/web/service"
 	"github.com/mhsanaei/3x-ui/v3/internal/web/service/panel"
@@ -44,8 +44,8 @@ func NewIndexController(g *gin.RouterGroup) *IndexController {
 func (a *IndexController) initRouter(g *gin.RouterGroup) {
 	g.GET("/", a.index)
 	g.GET("/csrf-token", a.csrfToken)
-	g.GET("/sponsors", a.sponsors)
-	g.GET("/sponsors/logo/:name", a.sponsorLogo)
+//	g.GET("/sponsors", a.sponsors)
+//	g.GET("/sponsors/logo/:name", a.sponsorLogo)
 
 	g.POST("/login", middleware.CSRFMiddleware(getRemoteIp), a.login)
 	g.POST("/logout", middleware.CSRFMiddleware(getRemoteIp), a.logout)
@@ -53,6 +53,7 @@ func (a *IndexController) initRouter(g *gin.RouterGroup) {
 }
 
 // sponsors is public so the login page can render its slot; failures stay silent.
+/* // No getting sponsors more
 func (a *IndexController) sponsors(c *gin.Context) {
 	list, err := a.panelService.GetSponsors()
 	if err != nil {
@@ -73,6 +74,7 @@ func (a *IndexController) sponsorLogo(c *gin.Context) {
 	c.Header("Cache-Control", "public, max-age=3600")
 	c.Data(http.StatusOK, contentType, data)
 }
+*/
 
 // index handles the root route, redirecting logged-in users to the panel or showing the login page.
 func (a *IndexController) index(c *gin.Context) {
