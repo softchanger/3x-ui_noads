@@ -17,12 +17,77 @@
   <a href="https://docs.sanaei.dev"><img src="https://img.shields.io/badge/docs-docs.sanaei.dev-22d3ee" alt="Documentation"></a>
 </p>
 
-**3X-UI** is an advanced, open-source web control panel for managing [Xray-core](https://github.com/XTLS/Xray-core) servers. It provides a clean, multi-language interface for deploying, configuring, and monitoring a wide range of proxy and VPN protocols — from a single VPS to multi-node deployments.
+**3X-UI NO ADS** is an advanced fork of open-source web control panel for managing [Xray-core](https://github.com/XTLS/Xray-core) servers. It provides a clean, multi-language interface for deploying, configuring, and monitoring a wide range of proxy and VPN protocols — from a single VPS to multi-node deployments.
 
 Built as an enhanced fork of the original X-UI project, 3X-UI adds broader protocol support, improved stability, per-client traffic accounting, and many quality-of-life features.
 
 > [!IMPORTANT]
 > This project is intended for personal use only. Please do not use it for illegal purposes or in a production environment.
+
+## Differences with original 3X-UI:
+- **Removed all sponsor's ADS**
+- **Added a little instruction for build**
+- **All other files are not modified**
+
+Removed:
+```
+        deleted:    frontend/src/api/queries/useSponsorsQuery.ts
+        deleted:    frontend/src/components/sponsor/SponsorCard.css
+        deleted:    frontend/src/components/sponsor/SponsorCard.stories.tsx
+        deleted:    frontend/src/components/sponsor/SponsorCard.tsx
+        deleted:    frontend/src/components/sponsor/SponsorSlot.tsx
+        deleted:    frontend/src/lib/sponsors.ts
+        deleted:    frontend/src/pages/sponsors/SponsorsPage.css
+        deleted:    frontend/src/pages/sponsors/SponsorsPage.tsx
+        deleted:    frontend/src/test/sponsors.test.tsx
+        deleted:    internal/web/service/panel/sponsor.go
+        deleted:    internal/web/service/panel/sponsor_test.go
+```
+Modified:
+```
+        modified:   frontend/src/pages/index/IndexPage.tsx
+        modified:   frontend/src/pages/login/LoginPage.tsx
+        modified:   frontend/src/routes/panelRoutes.tsx
+        modified:   internal/web/controller/index.go
+```
+README on Russian and English. All other files don't differ
+
+How to build (put theese commands):
+```bash
+# Getting dependencies and repo
+apt update && apt install -y build-essential git gcc
+cd ~ && git clone https://github.com/softchanger/3x-ui_noads.git && cd ~/3x-ui_noads
+mkdir deps && cd deps; wget https://go.dev/dl/go1.27.3.linux-amd64.tar.gz -O go1.27.3.linux-amd64.tar.gz
+tar -xvf go1.27.3.linux-amd64.tar.gz
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.8/install.sh | bash
+\. "$HOME/.nvm/nvm.sh"
+nvm install node; ln -s ../go.mod go.mod
+./go/bin/go mod download -x
+# Build frontend:
+cd ../frontend && npm ci && npm run build && cd ..
+# Build backend:
+mkdir -p dist && CGO_ENABLED=1 ./deps/go/bin/go build -v -trimpath -o dist/x-ui .
+strip --strip-all dist/x-ui
+```
+Binary file x-ui placed in the dist/ after build.
+
+Clean cache for a new build (will removed already builded binary):
+```bash
+rm -rf "frontend/node_modules" "frontend/dist" "internal/web/dist" "dist"
+```
+
+Install builded binary without ADS (if you already has with ADS one):
+```bash
+systemctl stop x-ui.service
+rm -rf "/usr/local/x-ui/x-ui" && cp -r "dist/x-ui" "/usr/local/x-ui"
+systemctl start x-ui.service
+```
+Remove all dependencies after build (if you are not plaining to build after):
+```bash
+apt remove --purge -y build-essential && apt autoremove -y
+nvm deactivate && nvm uninstall node
+rm -rf ~/go ~/.nvm ~/.npm ~/.node-gyp ~/.cache/go-build
+```
 
 ## Features
 
