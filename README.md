@@ -269,9 +269,13 @@ Tools and integrations built by the community around 3x-ui.
 
 ## Support project
 BTC: bc1qh600eatyy0kzxznkqx9yz027nmv2rq5cx8zups
+
 XMR: 46pbTHLMyTDKqkERgynrVAFJvGdQHyGcFgo2g6VZXLsnGRSBj1ecQDmFnVGxF829Qm6Ete1eXLngoZpptvxUjpGSDfuCxNo
+
 ETH: 0x170a06C1fCc4ba0A080487f1fBb648b716B25891
+
 SOL: m1CD4K8sysBXtaQMLU8VpE5Zzg7Ssq7NxBygZCuvoY3
+
 
 **If this project is helpful to you, you may wish to give it a**:star2:
 
