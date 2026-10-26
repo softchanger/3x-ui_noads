@@ -17,12 +17,83 @@
   <a href="https://docs.sanaei.dev"><img src="https://img.shields.io/badge/docs-docs.sanaei.dev-22d3ee" alt="Documentation"></a>
 </p>
 
-**3X-UI** — продвинутая веб-панель управления с открытым исходным кодом для управления серверами [Xray-core](https://github.com/XTLS/Xray-core). Она предоставляет аккуратный многоязычный интерфейс для развёртывания, настройки и мониторинга широкого спектра протоколов прокси и VPN — от одного VPS до развёртываний с несколькими узлами.
+**3X-UI NO ADS** — форк (ответвление) продвинутой веб-панели с открытым исходным кодом для управления серверами [Xray-core](https://github.com/XTLS/Xray-core). Она предоставляет аккуратный многоязычный интерфейс для развёртывания, настройки и мониторинга широкого спектра протоколов прокси и VPN — от одного VPS до развёртываний с несколькими узлами.
 
 Созданный как улучшенный форк оригинального проекта X-UI, 3X-UI добавляет более широкую поддержку протоколов, повышенную стабильность, учёт трафика по каждому клиенту и множество функций для удобства использования.
 
 > [!IMPORTANT]
 > Этот проект предназначен только для личного использования. Пожалуйста, не используйте его в незаконных целях или в производственной среде.
+
+## Отличия от оригинальной 3X-UI:
+- **Вырезана вся спонсорская реклама**
+- **Добавлена инструкция по сборке**
+- **Все остальное осталось без изменений**
+<details>
+<summary>Нажмите чтобы узнать подробности</summary>
+- **Удалено:**
+```
+        deleted:    frontend/src/api/queries/useSponsorsQuery.ts
+        deleted:    frontend/src/components/sponsor/SponsorCard.css
+        deleted:    frontend/src/components/sponsor/SponsorCard.stories.tsx
+        deleted:    frontend/src/components/sponsor/SponsorCard.tsx
+        deleted:    frontend/src/components/sponsor/SponsorSlot.tsx
+        deleted:    frontend/src/lib/sponsors.ts
+        deleted:    frontend/src/pages/sponsors/SponsorsPage.css
+        deleted:    frontend/src/pages/sponsors/SponsorsPage.tsx
+        deleted:    frontend/src/test/sponsors.test.tsx
+        deleted:    internal/web/service/panel/sponsor.go
+        deleted:    internal/web/service/panel/sponsor_test.go
+```
+- **Изменено:**
+```
+        modified:   frontend/src/pages/index/IndexPage.tsx
+        modified:   frontend/src/pages/login/LoginPage.tsx
+        modified:   frontend/src/routes/panelRoutes.tsx
+        modified:   internal/web/controller/index.go
+```
+README на русском и английском.
+- **Все остальное не тронуто**
+</details>
+
+<details>
+<summary>Нажмите для инструкции по сборке</summary>
+- **Сборка (пока только Ubuntu):**
+Вставлять команды последовательно:
+```bash
+# Получение зависимостей
+apt update && apt install -y build-essential git gcc
+mkdir deps && cd deps; wget https://go.dev/dl/go1.27.3.linux-amd64.tar.gz -O go1.27.3.linux-amd64.tar.gz
+tar -xvf go1.27.3.linux-amd64.tar.gz
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.8/install.sh | bash
+\. "$HOME/.nvm/nvm.sh"
+nvm install node; ln -s ../go.mod go.mod
+./go/bin/go mod download -x
+# Сборка frontend:
+cd ../frontend && npm ci && npm run build && cd ..
+# Сборка backend:
+mkdir -p dist && CGO_ENABLED=1 ./deps/go/bin/go build -v -trimpath -o dist/x-ui .
+strip --strip-all dist/x-ui
+```
+Бинарный файл x-ui после сборки лежит в **dist/**.
+
+Очистить для сборки по новой (будет удален бинарь если был уже собран!):
+```bash
+rm -rf "frontend/node_modules" "frontend/dist" "internal/web/dist" "dist"
+```
+
+Установить собранный бинарник без рекламы (если у вас уже установлен с рекламой):
+```bash
+systemctl stop x-ui.service
+rm -rf "/usr/local/x-ui/x-ui" && cp -r "dist/x-ui" "/usr/local/x-ui"
+systemctl start x-ui.service
+```
+Удалить все зависимости после сборки (если больше не планируете собирать):
+```bash
+apt remove --purge -y build-essential && apt autoremove -y
+nvm deactivate && nvm uninstall node
+rm -rf ~/go ~/.nvm ~/.npm ~/.node-gyp ~/.cache/go-build
+```
+</details>
 
 ## Возможности
 
