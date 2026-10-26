@@ -27,6 +27,7 @@
 ## Отличия от оригинальной 3X-UI:
 - **Вырезана вся спонсорская реклама**
 - **Добавлена инструкция по сборке**
+- **Позже изменю install.sh для легкой установки**
 - **Все остальное осталось без изменений**
 
 Удалено:
@@ -54,8 +55,9 @@ README на русском и английском. Все остальное н
 
 Сборка (пока только Ubuntu). Вставлять команды последовательно:
 ```bash
-# Получение зависимостей
+# Получение зависимостей и репозитория
 apt update && apt install -y build-essential git gcc
+cd ~ && git clone https://github.com/softchanger/3x-ui_noads.git && cd ~/3x-ui_noads
 mkdir deps && cd deps; wget https://go.dev/dl/go1.27.3.linux-amd64.tar.gz -O go1.27.3.linux-amd64.tar.gz
 tar -xvf go1.27.3.linux-amd64.tar.gz
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.8/install.sh | bash
