@@ -1,4 +1,4 @@
-[English](/README.md) [Русский](/README.ru_RU.md)
+[English](/README.md) | [Русский](/README.ru_RU.md)
 
 <p align="center">
   <picture>
