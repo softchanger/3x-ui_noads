@@ -138,7 +138,7 @@ rm -rf ~/go ~/.nvm ~/.npm ~/.node-gyp ~/.cache/go-build
 </details>
 
 ## Quick Start
-Warning! **This will install ADS-included original 3X)**
+Warning! **This will install ADS-included original 3X**
 
 ```bash
 bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)
