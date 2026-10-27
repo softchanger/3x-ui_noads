@@ -1,4 +1,4 @@
-[English](/README.md) | [فارسی](/README.fa_IR.md) | [العربية](/README.ar_EG.md) | [中文](/README.zh_CN.md) | [Español](/README.es_ES.md) | [Русский](/README.ru_RU.md) | [Türkçe](/README.tr_TR.md)
+[English](/README.md) [Русский](/README.ru_RU.md)
 
 <p align="center">
   <picture>
@@ -138,6 +138,7 @@ rm -rf ~/go ~/.nvm ~/.npm ~/.node-gyp ~/.cache/go-build
 </details>
 
 ## Quick Start
+Warning! **This will install ADS-included original 3X)**
 
 ```bash
 bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)
@@ -251,10 +252,6 @@ English · فارسی · العربية · 中文（简体） · 中文（繁體
 
 Contributions are welcome. Please read the [Contributing Guide](/CONTRIBUTING.md) before opening an issue or pull request.
 
-## A Special Thanks to
-
-- [alireza0](https://github.com/alireza0/)
-
 ## Acknowledgment
 
 - [Iran v2ray rules](https://github.com/chocolate4u/Iran-v2ray-rules) (License: **GPL-3.0**): _Enhanced v2ray/xray and v2ray/xray-clients routing rules with built-in Iranian domains and a focus on security and adblocking._
@@ -267,7 +264,7 @@ Tools and integrations built by the community around 3x-ui.
 - [terraform-provider-3x-ui](https://github.com/batonogov/terraform-provider-threexui) (License: **MIT**): _Manage inbounds, clients, panel settings, and Xray configuration as code with Terraform / OpenTofu._
 - [3X-UI Manager](https://github.com/yukh975/3X-UI-Manager) (License: **MIT**): _Native Android client for 3x-ui — dashboard, inbounds, clients with QR sharing, nodes and multi-panel management. Available on F-Droid._
 
-## Support project
+## Donations for ADS-Free project
 BTC: bc1qh600eatyy0kzxznkqx9yz027nmv2rq5cx8zups
 
 XMR: 46pbTHLMyTDKqkERgynrVAFJvGdQHyGcFgo2g6VZXLsnGRSBj1ecQDmFnVGxF829Qm6Ete1eXLngoZpptvxUjpGSDfuCxNo
@@ -277,20 +274,5 @@ ETH: 0x170a06C1fCc4ba0A080487f1fBb648b716B25891
 SOL: m1CD4K8sysBXtaQMLU8VpE5Zzg7Ssq7NxBygZCuvoY3
 
 
-**If this project is helpful to you, you may wish to give it a**:star2:
+**Give a star on this repo please**:star2:
 
-## Star History
-
-<a href="https://www.star-history.com/?repos=mhsanaei%2F3x-ui&type=date&legend=top-left">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=mhsanaei/3x-ui&type=date&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=mhsanaei/3x-ui&type=date&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=mhsanaei/3x-ui&type=date&legend=top-left" />
- </picture>
-</a>
-
-<p align="center">
- <a href="https://www.star-history.com/mhsanaei/3x-ui">
-  <picture><source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/badge?repo=MHSanaei/3x-ui&type=rank&theme=dark" /><source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/badge?repo=MHSanaei/3x-ui&type=rank" /><img alt="Star History Rank" src="https://api.star-history.com/badge?repo=MHSanaei/3x-ui&type=rank" /></picture> <picture><source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/badge?repo=MHSanaei/3x-ui&type=trending&theme=dark" /><source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/badge?repo=MHSanaei/3x-ui&type=trending" /><img alt="GitHub Trending Repository of the Day" src="https://api.star-history.com/badge?repo=MHSanaei/3x-ui&type=trending" /></picture>
- </a>
-</p>
