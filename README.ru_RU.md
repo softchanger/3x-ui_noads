@@ -138,7 +138,7 @@ rm -rf ~/go ~/.nvm ~/.npm ~/.node-gyp ~/.cache/go-build
 </details>
 
 ## Быстрый старт
-**Пожалуйста не используйте сейчас этот метод, он установит оригинальный 3X с рекламой**
+**Эти команды установят форк 3X-UI без рекламы:**
 
 ```bash
 bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)
